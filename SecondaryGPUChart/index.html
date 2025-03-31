@@ -76,6 +76,41 @@
             gap: 20px;
             flex-wrap: wrap;
         }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .form-group-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            #searchInput {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th, td {
+                font-size: 12px;
+                padding: 6px;
+            }
+            #searchInput {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
