@@ -97,9 +97,12 @@
         }
 
         @media (max-width: 480px) {
-            table {
-                display: block;
+            .table-container {
                 overflow-x: auto; /* Enable horizontal scrolling */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+            }
+            table {
+                min-width: 600px; /* Ensure the table has a minimum width */
                 white-space: nowrap; /* Prevent table content from wrapping */
             }
             th, td {
@@ -155,48 +158,49 @@
             </select>
         </div>
     </div>
-    <table id="dataTable">
-        <colgroup>
-            <col style="width: 5%;"> <!-- Brand -->
-        </colgroup>
-        <thead>
-            <tr>
-                <th onclick="sortTable(0)">Brand</th>
-                <th onclick="sortTable(1)">GPU</th>
-                <th onclick="sortTable(2)">Performance</th>
-                <th onclick="sortTable(3)">PCIe</th>
-                <th onclick="sortTable(4)">Notes</th>
-                <th onclick="sortTable(5)">Contributor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="background-color: #ef0707; text-align: center; color: white; font-weight: bold;">AMD</td>
-                <td style="color: white;">Vega 64</td>
-                <td style="line-height: 2; color: white;">1080p = 400<br>1440p ~ 300<br>2160p = n/a</td>
-                <td style="color: white;">PCIe 3.0 x8</td>
-                <td style="color: white;"></td>
-                <td style="color: white;">Yugi</td>
-            </tr>
-            <tr>
-                <td style="background-color: #76b900; text-align: center; color: white; font-weight: bold;">Nvidia</td>
-                <td style="color: white;">GTX 1660 Super</td>
-                <td style="line-height: 2; color: white;">1080p = 300<br>1440p = 190<br> 2160p = 67</td>
-                <td style="color: white;"></td>
-                <td style="color: white;"></td>
-                <td style="color: white;">Ravenger</td>
-            </tr>
-            <tr>
-                <td style="background-color: rgb(0, 166, 255); text-align: center; color: white; font-weight: bold;">Intel</td>
-                <td style="color: white;">Arc B580</td>
-                <td style="line-height: 2; color: white;">1080p ~ 440<br> 1440p ~ 330<br> 2160p = 175</td>
-                <td style="color: white;"></td>
-                <td style="color: white;"></td>
-                <td style="color: white;">shabib67</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="table-container">
+        <table id="dataTable">
+            <colgroup>
+                <col style="width: 5%;"> <!-- Brand -->
+            </colgroup>
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Brand</th>
+                    <th onclick="sortTable(1)">GPU</th>
+                    <th onclick="sortTable(2)">Performance</th>
+                    <th onclick="sortTable(3)">PCIe</th>
+                    <th onclick="sortTable(4)">Notes</th>
+                    <th onclick="sortTable(5)">Contributor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="background-color: #ef0707; text-align: center; color: white; font-weight: bold;">AMD</td>
+                    <td style="color: white;">Vega 64</td>
+                    <td style="line-height: 2; color: white;">1080p = 400<br>1440p ~ 300<br>2160p = n/a</td>
+                    <td style="color: white;">PCIe 3.0 x8</td>
+                    <td style="color: white;"></td>
+                    <td style="color: white;">Yugi</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #76b900; text-align: center; color: white; font-weight: bold;">Nvidia</td>
+                    <td style="color: white;">GTX 1660 Super</td>
+                    <td style="line-height: 2; color: white;">1080p = 300<br>1440p = 190<br> 2160p = 67</td>
+                    <td style="color: white;"></td>
+                    <td style="color: white;"></td>
+                    <td style="color: white;">Ravenger</td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(0, 166, 255); text-align: center; color: white; font-weight: bold;">Intel</td>
+                    <td style="color: white;">Arc B580</td>
+                    <td style="line-height: 2; color: white;">1080p ~ 440<br> 1440p ~ 330<br> 2160p = 175</td>
+                    <td style="color: white;"></td>
+                    <td style="color: white;"></td>
+                    <td style="color: white;">shabib67</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script>
         // Search function
         document.getElementById('searchInput').addEventListener('keyup', function() {
